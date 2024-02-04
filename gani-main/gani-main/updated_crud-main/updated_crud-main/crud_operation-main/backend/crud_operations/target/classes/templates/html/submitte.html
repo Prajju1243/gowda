@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+    	body{
+    		display:flex;
+    		flex-direction:column;
+    		justify-content:center;
+    		align-items:center;
+    		height:100vh;
+    		background-color:antiquewhite;
+    	}
+    	
+    	th,td{
+    	text-align:center;
+    	color:yellow;
+    	}
+    	#f{
+    		display:flex;
+    		justify-content:center;
+    		align-items:center;
+    	}
+    	
+    	table.table-bordered{
+    border:3px solid black;
+    
+  }
+  
+  table.table-bordered > thead > tr > th{
+    border:2px solid black;
+}
+table.table-bordered > tbody > tr > td{
+    border:2px solid black;
+}
+th{
+   font-size:18px;
+}
+
+ #res1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    background-color: greenyellow;
+    width:40px;
+    margin-left:75px;
+ }
+ #res2{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+     background-color: greenyellow;
+    width:40px;
+    margin-left:75px;
+ }
+ #res3{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+     background-color: greenyellow;
+    width:40px;
+    margin-left:75px;
+ }
+ #res4{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+     background-color: greenyellow;
+    width:40px;
+    margin-left:75px;
+ }
+ #grade1{
+ font-size:14px;
+ }
+ #grade2{
+ font-size:14px;
+ }
+ #grade3{
+ font-size:14px;
+ }
+ #grade4{
+ font-size:14px;
+ }
+ h4{
+ color:mediumslateblue;
+ }
+ #total{
+ color:black;
+ }
+ #a{
+   background-color:yellow;
+ }
+    </style>
+    
+</head>
+<body>
+ 
+    <table class="table table-bordered w-50 h-50">
+  <thead>
+    <tr>
+      <th id="a" scope="col">Sl No</th>
+      <th id="a" scope="col">A4 Quotient</th>
+      <th id="a" scope="col">Results (of 5)</th>
+      <th id="a" scope="col">Percentage(%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+            <td>Absorption</td>
+      <td>
+      	<span id="res1"></span>
+      	<span id="grade1"></span> 
+      </td>
+       <td id="t1"></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">2</th>
+      <td>Assimilation</td>
+      <td >
+        <span id="res2"></span>
+      	<span id="grade2"></span> 
+      </td>
+      
+      <td id="t2"></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+       <td>Appreciation</td>
+      <td >
+        <span id="res3"></span>
+      	<span id="grade3"></span> 
+      </td>
+      
+     
+      <td id="t3"></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Application</td>
+     <td >
+        <span id="res4"></span>
+      	<span id="grade4"></span> 
+      </td>
+      
+      
+      <td id="t4"></td>
+    </tr>
+  </tbody>
+</table><br/>
+  <div id="f">
+  <h4>the total percentage earned :</h4>
+  <h4 id="total"></h4>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+window.addEventListener("DOMContentLoaded", function(){
+	var ans1=localStorage.getItem("score1")
+	var ans2=localStorage.getItem("score2")
+	var ans3=localStorage.getItem("score3")
+	var ans4=localStorage.getItem("score4")
+	var h1 = document.getElementById('res1');
+	var g1 = document.getElementById("grade1");
+	
+		var h2 = document.getElementById('res2');
+		var g2 = document.getElementById("grade2");
+		
+		var h3 = document.getElementById('res3');
+		var g3 = document.getElementById("grade3");
+		
+		var h4 = document.getElementById('res4');
+		var g4 = document.getElementById("grade4");
+		
+		if (ans1 == 5) {
+			h1.textContent = `${ans1}/5`;
+			g1.innerHTML = "excellent"
+		} else if (ans1 == 4) {
+			h1.textContent = `${ans1}/5 `;
+			g1.innerHTML = "very good"
+		} else if (ans1 == 3) {
+			h1.textContent = `${ans1}/5 `;
+			g1.innerHTML = " good"
+		} else if (ans1 == 2) {
+			h1.textContent = `${ans1}/5`;
+			g1.innerHTML = "Average"
+		} else {
+			h1.textContent = `${ans1}/5`;
+			g1.innerHTML = "fail"
+		}
+		
+		if (ans2 == 5) {
+			h2.textContent = `${ans2}/5`;
+			g2.innerHTML = "excellent"
+		} else if (ans2 == 4) {
+			h2.textContent = `${ans2}/5 `;
+			g2.innerHTML = "very good"
+		} else if (ans2 == 3) {
+			h2.textContent = `${ans2}/5 `;
+			g2.innerHTML = " good"
+		} else if (ans2 == 2) {
+			h2.textContent = `${ans2}/5`;
+			g2.innerHTML = "Average"
+		} else {
+			h2.textContent = `${ans2}/5`;
+			g2.innerHTML = "fail"
+		}
+		
+		if (ans3 == 5) {
+			h3.textContent = `${ans3}/5`;
+			g3.innerHTML = "excellent"
+		} else if (ans3 == 4) {
+			h3.textContent = `${ans3}/5 `;
+			g3.innerHTML = "very good"
+		} else if (ans3 == 3) {
+			h3.textContent = `${ans3}/5 `;
+			g3.innerHTML = " good"
+		} else if (ans3 == 2) {
+			h3.textContent = `${ans3}/5`;
+			g3.innerHTML = "Average"
+		} else {
+			h3.textContent = `${ans3}/5`;
+			g3.innerHTML = "fail"
+		}
+		
+		if (ans4 == 5) {
+			h4.textContent = `${ans4}/5`;
+			g4.innerHTML = "excellent"
+		} else if (ans4 == 4) {
+			h4.textContent = `${ans4}/5 `;
+			g4.innerHTML = "very good"
+		} else if (ans4 == 3) {
+			h4.textContent = `${ans4}/5 `;
+			g4.innerHTML = " good"
+		} else if (ans4 == 2) {
+			h4.textContent = `${ans4}/5`;
+			g4.innerHTML = "Average"
+		} else {
+			h4.textContent = `${ans2}/5`;
+			g4.innerHTML = "fail"
+		}
+		
+		
+		h2.textContent = `${ans2}/5`;
+		h3.textContent = `${ans3}/5`;
+		h4.textContent = `${ans4}/5`;
+
+		var p1 = (ans1 / 5) * 100;
+		var p2 = (ans2 / 5) * 100;
+		var p3 = (ans3 / 5) * 100;
+		var p4 = (ans4 / 5) * 100;
+		var t1 = document.getElementById('t1');
+		var t2 = document.getElementById('t2');
+		var t3 = document.getElementById('t3');
+		var t4 = document.getElementById('t4');
+		t1.textContent = `${p1}%`;
+		t2.textContent = `${p2}%`;
+		t3.textContent = `${p3}%`;
+		t4.textContent = `${p4}%`;
+
+		var fin = (p1 + p2 + p3 + p4) / 4;
+		var total = document.getElementById('total');
+		total.textContent = `${fin}%`;
+
+	});
+</script>    
+</body>
+</html>
